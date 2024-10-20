@@ -10,19 +10,25 @@ const chatRoomSchema = z
   })
   .describe("ChatRoom");
 
-const chatRoomParams = z
-  .object({
-    chat_room_id: z
-      .string()
-      .openapi({ example: "550e8400-e29b-41d4-a716-446655440002" }),
+const chatRoomParams = chatRoomSchema
+  .pick({ user_id: true, advisor_id: true })
+  .openapi({
+    example: {
+      user_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      advisor_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    },
+    required: ["user_id", "advisor_id"],
   })
   .describe("ChatRoomParams");
 
-// Request body for creating a chat room
 const chatRoomRequestBody = chatRoomSchema
-  .omit({ chat_room_id: true })
+  .omit({ chat_room_id: true, created_at: true })
   .openapi({
-    required: ["user_id", "advisor_id"],
+    example: {
+      user_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      advisor_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    },
+    required: ["user_id"],
   })
   .describe("ChatRoomRequestBody");
 

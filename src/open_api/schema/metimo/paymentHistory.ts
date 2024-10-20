@@ -9,18 +9,23 @@ const paymentHistorySchema = z
     created_at: z.string(),
   })
   .describe("PaymentHistory");
+const paymentHistoryListResponse = z.object({
+  posts: z.array(paymentHistorySchema),
+});
 
-const paymentHistoryParams = z
-  .object({
-    payment_id: z
-      .string()
-      .openapi({ example: "550e8400-e29b-41d4-a716-446655440002" }),
+const paymentHistoryParams = paymentHistorySchema
+  .pick({ payment_id: true })
+  .openapi({
+    required: ["payment_id"],
+    example: {
+      payment_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    },
   })
   .describe("PaymentHistoryParams");
 
 // Request body for creating a payment history
 const paymentHistoryRequestBody = paymentHistorySchema
-  .omit({ payment_id: true })
+  .omit({ payment_id: true, created_at: true })
   .openapi({
     required: ["user_id", "amount", "payment_type"],
   })
@@ -28,6 +33,7 @@ const paymentHistoryRequestBody = paymentHistorySchema
 
 export {
   paymentHistorySchema,
+  paymentHistoryListResponse,
   paymentHistoryParams,
   paymentHistoryRequestBody,
 };

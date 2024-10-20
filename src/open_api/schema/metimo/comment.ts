@@ -11,16 +11,18 @@ const commentSchema = z
   })
   .describe("Comment");
 
-const commentParams = z
-  .object({
-    comment_id: z
-      .string()
-      .openapi({ example: "550e8400-e29b-41d4-a716-446655440002" }),
+const commentParams = commentSchema
+  .pick({ comment_id: true })
+  .openapi({
+    required: ["comment_id"],
+    example: {
+      comment_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    },
   })
   .describe("CommentParams");
 
 const commentRequestBody = commentSchema
-  .omit({ comment_id: true })
+  .omit({ comment_id: true, created_at: true })
   .openapi({
     required: ["user_id", "post_id", "content"],
   })

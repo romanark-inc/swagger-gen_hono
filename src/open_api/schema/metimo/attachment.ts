@@ -10,20 +10,30 @@ const attachmentSchema = z
   })
   .describe("Attachment");
 
-const attachmentParams = z
-  .object({
-    attachment_id: z
-      .string()
-      .openapi({ example: "550e8400-e29b-41d4-a716-446655440002" }),
+const attachmentListResponse = z.object({
+  attachments: z.array(attachmentSchema),
+});
+
+const attachmentParams = attachmentSchema
+  .pick({ attachment_id: true, message_id: true })
+
+  .openapi({
+    required: ["attachment_id"],
+    example: {
+      attachment_id: "550e8400-e29b-41d4-a716-446655440002",
+      message_id: "550e8400-e29b-41d4-a716-446655440000",
+    },
   })
   .describe("AttachmentParams");
 
 // Request body for creating an attachment
 const attachmentRequestBody = attachmentSchema
-  .omit({ attachment_id: true })
-  .openapi({
-    required: ["message_id", "file_url", "file_type", "file_size"],
-  })
+  .omit({ attachment_id: true, created_at: true })
   .describe("AttachmentRequestBody");
 
-export { attachmentSchema, attachmentParams, attachmentRequestBody };
+export {
+  attachmentSchema,
+  attachmentListResponse,
+  attachmentParams,
+  attachmentRequestBody,
+};

@@ -25,19 +25,27 @@ const userSchema = z
   .describe("User");
 
 const userRequestBody = userSchema
-  .omit({ user_id: true })
+  .omit({
+    user_id: true,
+    created_at: true,
+    updated_at: true,
+    last_login: true,
+    credit_balance: true,
+    is_subscriber: true,
+  })
   .openapi({
     required: ["name", "email", "password_hash"],
   })
   .describe("UserRequestBody");
 
-const userParams = z
-  .object({
-    user_id: z.string().openapi({
-      example: "550e8400-e29b-41d4-a716-446655440000",
-    }),
+const userParams = userSchema
+  .pick({
+    user_id: true,
   })
   .openapi({
+    example: {
+      user_id: "XXXXXXXX",
+    },
     required: ["user_id"],
   })
   .describe("UserParams");

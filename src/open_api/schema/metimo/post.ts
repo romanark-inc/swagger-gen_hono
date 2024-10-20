@@ -14,17 +14,29 @@ const postSchema = z
   })
   .describe("Post");
 
-const postParams = z
-  .object({
-    post_id: z
-      .string()
-      .openapi({ example: "550e8400-e29b-41d4-a716-446655440002" }),
+const postListResponse = z.object({
+  posts: z.array(postSchema),
+});
+
+const postParams = postSchema
+  .pick({ post_id: true })
+  .openapi({
+    example: {
+      post_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    },
+    required: ["post_id"],
   })
   .describe("PostParams");
 
 const postRequestBody = postSchema
-  .omit({ post_id: true })
+  .omit({ post_id: true, created_at: true, updated_at: true, view_count: true })
   .openapi({
+    example: {
+      user_id: "550e8400-e29b-41d4-a716-446655440000",
+      description: "This is a post",
+      photo_urls: ["https://example.com/photo.jpg"],
+      tags: ["tag1", "tag2"],
+    },
     required: ["user_id"],
   })
   .describe("PostRequestBody");

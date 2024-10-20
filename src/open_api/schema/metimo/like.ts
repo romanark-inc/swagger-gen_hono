@@ -9,11 +9,13 @@ const likeSchema = z
   })
   .describe("Like");
 
-const likeParams = z
-  .object({
-    like_id: z
-      .string()
-      .openapi({ example: "550e8400-e29b-41d4-a716-446655440002" }),
+const likeParams = likeSchema
+  .pick({ like_id: true })
+  .openapi({
+    required: ["like_id"],
+    example: {
+      like_id: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    },
   })
   .describe("LikeParams");
 
