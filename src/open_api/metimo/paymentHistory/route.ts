@@ -1,4 +1,5 @@
 import {
+  paymentHistoryIDResponse,
   paymentHistorySchema,
   paymentHistoryListResponse,
   paymentHistoryParams,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const PaymentHistoryCreateRoute = postRoute({
   path: "payment_histories",
   requestBodySchema: paymentHistoryRequestBody,
-  responsesSchema: paymentHistorySchema,
+  responsesSchema: paymentHistoryIDResponse,
 });
 
 const PaymentHistoryAllGetRoute = getRoute({
@@ -27,13 +28,13 @@ const PaymentHistoryUpdateRoute = putRoute({
   path: "payment_histories/{payment_history_id}",
   paramsSchema: paymentHistoryParams,
   requestBodySchema: paymentHistoryRequestBody,
-  responsesSchema: paymentHistorySchema,
+  responsesSchema: paymentHistoryIDResponse,
 });
 
 const PaymentHistoryDeleteRoute = deleteRoute({
   path: "payment_histories/{payment_history_id}",
   paramsSchema: paymentHistoryParams,
-  responsesSchema: paymentHistorySchema,
+  responsesSchema: paymentHistoryIDResponse,
 });
 
 export const PaymentHistoryRoutes = [

@@ -1,4 +1,5 @@
 import {
+  postIDResponse,
   postParams,
   postRequestBody,
   postSchema,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const PostCreateRoute = postRoute({
   path: "posts",
   requestBodySchema: postRequestBody,
-  responsesSchema: postSchema,
+  responsesSchema: postIDResponse,
 });
 
 const PostGetAllRoute = getRoute({
@@ -27,19 +28,13 @@ const PostUpdateRoute = putRoute({
   path: "posts/{post_id}",
   paramsSchema: postParams,
   requestBodySchema: postRequestBody,
-  responsesSchema: postSchema,
+  responsesSchema: postIDResponse,
 });
 
 const PostDeleteRoute = deleteRoute({
   path: "posts/{post_id}",
   paramsSchema: postParams,
-  responsesSchema: postSchema,
-});
-
-const PostGetAllByUserRoute = getRoute({
-  path: "users/{user_id}/posts",
-  paramsSchema: postParams,
-  responsesSchema: postListResponse,
+  responsesSchema: postIDResponse,
 });
 
 export const PostRoutes = [
@@ -48,5 +43,4 @@ export const PostRoutes = [
   PostGetByIDRoute,
   PostUpdateRoute,
   PostDeleteRoute,
-  PostGetAllByUserRoute,
 ];

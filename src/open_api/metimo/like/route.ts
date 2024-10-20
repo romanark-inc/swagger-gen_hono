@@ -1,4 +1,5 @@
 import {
+  likeIDResponse,
   likeSchema,
   likeParams,
   likeRequestBody,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const LikeCreateRoute = postRoute({
   path: "likes",
   requestBodySchema: likeRequestBody,
-  responsesSchema: likeSchema,
+  responsesSchema: likeIDResponse,
 });
 
 const LikeGetAllRoute = getRoute({
@@ -27,13 +28,13 @@ const LikeUpdateRoute = putRoute({
   path: "likes/{like_id}",
   paramsSchema: likeParams,
   requestBodySchema: likeRequestBody,
-  responsesSchema: likeSchema,
+  responsesSchema: likeIDResponse,
 });
 
 const LikeDeleteRoute = deleteRoute({
   path: "likes/{like_id}",
   paramsSchema: likeParams,
-  responsesSchema: likeSchema,
+  responsesSchema: likeIDResponse,
 });
 
 export const LikeRoutes = [

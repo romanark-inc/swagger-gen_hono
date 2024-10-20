@@ -9,7 +9,7 @@ const likeSchema = z
   })
   .describe("Like");
 
-const LikeIDResponse = likeSchema.pick({ like_id: true });
+const likeIDResponse = likeSchema.pick({ like_id: true });
 
 const likeListResponse = z.object({
   likes: z.array(likeSchema),
@@ -33,8 +33,8 @@ const likeRequestBody = likeSchema
   .describe("LikeRequestBody");
 
 export {
+  likeIDResponse,
   likeSchema,
-  LikeIDResponse,
   likeListResponse,
   likeParams,
   likeRequestBody,

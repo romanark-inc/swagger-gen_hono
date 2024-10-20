@@ -10,7 +10,7 @@ const paymentHistorySchema = z
   })
   .describe("PaymentHistory");
 
-const PaymentHistoryIDResponse = paymentHistorySchema.pick({
+const paymentHistoryIDResponse = paymentHistorySchema.pick({
   payment_id: true,
 });
 
@@ -37,7 +37,7 @@ const paymentHistoryRequestBody = paymentHistorySchema
   .describe("PaymentHistoryRequestBody");
 
 export {
-  PaymentHistoryIDResponse,
+  paymentHistoryIDResponse,
   paymentHistorySchema,
   paymentHistoryListResponse,
   paymentHistoryParams,

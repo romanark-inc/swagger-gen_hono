@@ -1,4 +1,5 @@
 import {
+  attachmentIDResponse,
   attachmentSchema,
   attachmentListResponse,
   attachmentParams,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const AttachmentCreateRoute = postRoute({
   path: "attachments",
   requestBodySchema: attachmentRequestBody,
-  responsesSchema: attachmentSchema,
+  responsesSchema: attachmentIDResponse,
 });
 
 const AttachmentGetAllRoute = getRoute({
@@ -27,13 +28,13 @@ const AttachmentUpdateRoute = putRoute({
   path: "attachments/{attachment_id}",
   paramsSchema: attachmentParams,
   requestBodySchema: attachmentRequestBody,
-  responsesSchema: attachmentSchema,
+  responsesSchema: attachmentIDResponse,
 });
 
 const AttachmentDeleteRoute = deleteRoute({
   path: "attachments/{attachment_id}",
   paramsSchema: attachmentParams,
-  responsesSchema: attachmentSchema,
+  responsesSchema: attachmentIDResponse,
 });
 
 export const AttachmentRoutes = [

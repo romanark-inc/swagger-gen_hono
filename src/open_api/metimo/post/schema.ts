@@ -14,7 +14,7 @@ const postSchema = z
   })
   .describe("Post");
 
-const PostIDResponse = postSchema.pick({ post_id: true });
+const postIDResponse = postSchema.pick({ post_id: true });
 
 const postListResponse = z.object({
   posts: z.array(postSchema),
@@ -44,7 +44,7 @@ const postRequestBody = postSchema
   .describe("PostRequestBody");
 
 export {
-  PostIDResponse,
+  postIDResponse,
   postSchema,
   postListResponse,
   postParams,

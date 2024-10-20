@@ -1,4 +1,5 @@
 import {
+  chatRoomIDResponse,
   chatRoomSchema,
   chatRoomListResponse,
   chatRoomParams,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const ChatRoomCreateRoute = postRoute({
   path: "chatRooms",
   requestBodySchema: chatRoomRequestBody,
-  responsesSchema: chatRoomSchema,
+  responsesSchema: chatRoomIDResponse,
 });
 
 const ChatRoomGetAllRoute = getRoute({
@@ -27,13 +28,13 @@ const ChatRoomUpdateRoute = putRoute({
   path: "chatRooms/{chatRoom_id}",
   paramsSchema: chatRoomParams,
   requestBodySchema: chatRoomRequestBody,
-  responsesSchema: chatRoomSchema,
+  responsesSchema: chatRoomIDResponse,
 });
 
 const ChatRoomDeleteRoute = deleteRoute({
   path: "chatRooms/{chatRoom_id}",
   paramsSchema: chatRoomParams,
-  responsesSchema: chatRoomSchema,
+  responsesSchema: chatRoomIDResponse,
 });
 
 export const ChatRoomRoutes = [

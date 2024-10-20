@@ -14,7 +14,7 @@ const bookmarkListResponse = z.object({
   bookmarks: z.array(bookmarkSchema),
 });
 
-const BookMarkIDResponse = bookmarkSchema.pick({ bookmark_id: true });
+const bookmarkIDResponse = bookmarkSchema.pick({ bookmark_id: true });
 
 const bookmarkParams = bookmarkSchema
   .pick({ bookmark_id: true })
@@ -38,7 +38,7 @@ const bookmarkRequestBody = bookmarkSchema
   .describe("BookmarkRequestBody");
 
 export {
-  BookMarkIDResponse,
+  bookmarkIDResponse,
   bookmarkSchema,
   bookmarkListResponse,
   bookmarkParams,

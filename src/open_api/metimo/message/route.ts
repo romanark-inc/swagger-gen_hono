@@ -1,4 +1,5 @@
 import {
+  messageIDResponse,
   messageSchema,
   messageParams,
   messageRequestBody,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const MessageCreateRoute = postRoute({
   path: "messages",
   requestBodySchema: messageRequestBody,
-  responsesSchema: messageSchema,
+  responsesSchema: messageIDResponse,
 });
 
 const MessageGetAllRoute = getRoute({
@@ -27,13 +28,13 @@ const MessageUpdateRoute = putRoute({
   path: "messages/{message_id}",
   paramsSchema: messageParams,
   requestBodySchema: messageRequestBody,
-  responsesSchema: messageSchema,
+  responsesSchema: messageIDResponse,
 });
 
 const MessageDeleteRoute = deleteRoute({
   path: "messages/{message_id}",
   paramsSchema: messageParams,
-  responsesSchema: messageSchema,
+  responsesSchema: messageIDResponse,
 });
 
 export const MessageRoutes = [

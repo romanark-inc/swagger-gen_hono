@@ -1,4 +1,5 @@
 import {
+  bookmarkIDResponse,
   bookmarkSchema,
   bookmarkListResponse,
   bookmarkParams,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const BookmarkCreateRoute = postRoute({
   path: "bookmarks",
   requestBodySchema: bookmarkRequestBody,
-  responsesSchema: bookmarkSchema,
+  responsesSchema: bookmarkIDResponse,
 });
 
 const BookmarkGetAllRoute = getRoute({
@@ -27,13 +28,13 @@ const BookmarkUpdateRoute = putRoute({
   path: "bookmarks/{bookmark_id}",
   paramsSchema: bookmarkParams,
   requestBodySchema: bookmarkRequestBody,
-  responsesSchema: bookmarkSchema,
+  responsesSchema: bookmarkIDResponse,
 });
 
 const BookmarkDeleteRoute = deleteRoute({
   path: "bookmarks/{bookmark_id}",
   paramsSchema: bookmarkParams,
-  responsesSchema: bookmarkSchema,
+  responsesSchema: bookmarkIDResponse,
 });
 
 export const BookmarkRoutes = [

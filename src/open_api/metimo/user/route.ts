@@ -1,4 +1,5 @@
 import {
+  userIDResponse,
   userSchema,
   userRequestBody,
   userParams,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const UserCreateRoute = postRoute({
   path: "users",
   requestBodySchema: userRequestBody,
-  responsesSchema: userSchema,
+  responsesSchema: userIDResponse,
 });
 
 const UserAllGetRoute = getRoute({
@@ -27,13 +28,13 @@ const UserUpdateRoute = putRoute({
   path: "users/{user_id}",
   paramsSchema: userParams,
   requestBodySchema: userRequestBody,
-  responsesSchema: userSchema,
+  responsesSchema: userIDResponse,
 });
 
 const UserDeleteRoute = deleteRoute({
   path: "users/{user_id}",
   paramsSchema: userParams,
-  responsesSchema: userSchema,
+  responsesSchema: userIDResponse,
 });
 
 export const UserRoutes = [

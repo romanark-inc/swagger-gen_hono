@@ -1,4 +1,5 @@
 import {
+  commentIDResponse,
   commentSchema,
   commentParams,
   commentRequestBody,
@@ -9,7 +10,7 @@ import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
 const CommentCreateRoute = postRoute({
   path: "comments",
   requestBodySchema: commentRequestBody,
-  responsesSchema: commentSchema,
+  responsesSchema: commentIDResponse,
 });
 
 const CommentGetAllRoute = getRoute({
@@ -27,13 +28,13 @@ const CommentUpdateRoute = putRoute({
   path: "comments/{comment_id}",
   paramsSchema: commentParams,
   requestBodySchema: commentRequestBody,
-  responsesSchema: commentSchema,
+  responsesSchema: commentIDResponse,
 });
 
 const CommentDeleteRoute = deleteRoute({
   path: "comments/{comment_id}",
   paramsSchema: commentParams,
-  responsesSchema: commentSchema,
+  responsesSchema: commentIDResponse,
 });
 
 export const CommentRoutes = [

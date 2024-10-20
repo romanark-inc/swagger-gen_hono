@@ -14,7 +14,7 @@ const attachmentListResponse = z.object({
   attachments: z.array(attachmentSchema),
 });
 
-const AttachmentIDResponse = attachmentSchema.pick({ attachment_id: true });
+const attachmentIDResponse = attachmentSchema.pick({ attachment_id: true });
 
 const attachmentParams = attachmentSchema
   .pick({ attachment_id: true, message_id: true })
@@ -32,7 +32,7 @@ const attachmentRequestBody = attachmentSchema
   .describe("AttachmentRequestBody");
 
 export {
-  AttachmentIDResponse,
+  attachmentIDResponse,
   attachmentSchema,
   attachmentListResponse,
   attachmentParams,
