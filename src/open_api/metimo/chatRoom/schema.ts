@@ -10,6 +10,10 @@ const chatRoomSchema = z
   })
   .describe("ChatRoom");
 
+const chatRoomListResponse = z.object({
+  chat_rooms: z.array(chatRoomSchema),
+});
+
 const chatRoomParams = chatRoomSchema
   .pick({ user_id: true, advisor_id: true })
   .openapi({
@@ -32,4 +36,9 @@ const chatRoomRequestBody = chatRoomSchema
   })
   .describe("ChatRoomRequestBody");
 
-export { chatRoomSchema, chatRoomParams, chatRoomRequestBody };
+export {
+  chatRoomSchema,
+  chatRoomListResponse,
+  chatRoomParams,
+  chatRoomRequestBody,
+};
