@@ -1,0 +1,9 @@
+export { UserRoutes } from "./user/route";
+export { PostRoutes } from "./post/route";
+export { LikeRoutes } from "./like/route";
+export { BookmarkRoutes } from "./bookmark/route";
+export { ChatRoomRoutes } from "./chatRoom/route";
+export { MessageRoutes } from "./message/route";
+export { CommentRoutes } from "./comment/route";
+export { PaymentHistoryRoutes } from "./paymentHistory/route";
+export { AttachmentRoutes } from "./attachment/route";

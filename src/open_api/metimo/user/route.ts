@@ -36,10 +36,10 @@ const UserDeleteRoute = deleteRoute({
   responsesSchema: userSchema,
 });
 
-export {
+export const UserRoutes = [
   UserCreateRoute,
   UserAllGetRoute,
   UserGetByIDRoute,
   UserUpdateRoute,
   UserDeleteRoute,
-};
+];

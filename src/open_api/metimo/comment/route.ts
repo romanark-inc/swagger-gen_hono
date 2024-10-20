@@ -36,10 +36,10 @@ const CommentDeleteRoute = deleteRoute({
   responsesSchema: commentSchema,
 });
 
-export {
+export const CommentRoutes = [
   CommentCreateRoute,
   CommentGetAllRoute,
   CommentGetByIDRoute,
   CommentUpdateRoute,
   CommentDeleteRoute,
-};
+];

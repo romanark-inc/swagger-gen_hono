@@ -36,10 +36,10 @@ const BookmarkDeleteRoute = deleteRoute({
   responsesSchema: bookmarkSchema,
 });
 
-export {
+export const BookmarkRoutes = [
   BookmarkCreateRoute,
   BookmarkGetAllRoute,
   BookmarkGetByIDRoute,
   BookmarkUpdateRoute,
   BookmarkDeleteRoute,
-};
+];

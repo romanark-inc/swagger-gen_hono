@@ -42,11 +42,11 @@ const PostGetAllByUserRoute = getRoute({
   responsesSchema: postListResponse,
 });
 
-export {
+export const PostRoutes = [
   PostCreateRoute,
   PostGetAllRoute,
   PostGetByIDRoute,
   PostUpdateRoute,
   PostDeleteRoute,
   PostGetAllByUserRoute,
-};
+];

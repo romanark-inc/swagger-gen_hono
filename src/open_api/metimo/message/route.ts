@@ -36,10 +36,10 @@ const MessageDeleteRoute = deleteRoute({
   responsesSchema: messageSchema,
 });
 
-export {
+export const MessageRoutes = [
   MessageCreateRoute,
   MessageGetAllRoute,
   MessageGetByIDRoute,
   MessageUpdateRoute,
   MessageDeleteRoute,
-};
+];

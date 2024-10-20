@@ -36,10 +36,10 @@ const LikeDeleteRoute = deleteRoute({
   responsesSchema: likeSchema,
 });
 
-export {
+export const LikeRoutes = [
   LikeCreateRoute,
   LikeGetAllRoute,
   LikeGetByIDRoute,
   LikeUpdateRoute,
   LikeDeleteRoute,
-};
+];

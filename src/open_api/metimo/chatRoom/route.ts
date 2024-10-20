@@ -36,10 +36,10 @@ const ChatRoomDeleteRoute = deleteRoute({
   responsesSchema: chatRoomSchema,
 });
 
-export {
+export const ChatRoomRoutes = [
   ChatRoomCreateRoute,
   ChatRoomGetAllRoute,
   ChatRoomGetByIDRoute,
   ChatRoomUpdateRoute,
   ChatRoomDeleteRoute,
-};
+];

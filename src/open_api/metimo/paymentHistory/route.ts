@@ -36,10 +36,10 @@ const PaymentHistoryDeleteRoute = deleteRoute({
   responsesSchema: paymentHistorySchema,
 });
 
-export {
+export const PaymentHistoryRoutes = [
   PaymentHistoryCreateRoute,
   PaymentHistoryAllGetRoute,
   PaymentHistoryGetByIDRoute,
   PaymentHistoryUpdateRoute,
   PaymentHistoryDeleteRoute,
-};
+];

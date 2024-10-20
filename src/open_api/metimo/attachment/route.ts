@@ -36,10 +36,10 @@ const AttachmentDeleteRoute = deleteRoute({
   responsesSchema: attachmentSchema,
 });
 
-export {
+export const AttachmentRoutes = [
   AttachmentCreateRoute,
   AttachmentGetAllRoute,
   AttachmentGetByIDRoute,
   AttachmentUpdateRoute,
   AttachmentDeleteRoute,
-};
+];
