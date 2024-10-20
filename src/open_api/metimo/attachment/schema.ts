@@ -16,7 +16,6 @@ const attachmentListResponse = z.object({
 
 const attachmentParams = attachmentSchema
   .pick({ attachment_id: true, message_id: true })
-
   .openapi({
     required: ["attachment_id"],
     example: {
@@ -26,7 +25,6 @@ const attachmentParams = attachmentSchema
   })
   .describe("AttachmentParams");
 
-// Request body for creating an attachment
 const attachmentRequestBody = attachmentSchema
   .omit({ attachment_id: true, created_at: true })
   .describe("AttachmentRequestBody");

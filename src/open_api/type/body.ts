@@ -4,17 +4,17 @@ import { ZodType } from "zod";
 interface ZodMediaTypeObject {
   schema: ZodType<unknown>;
 }
-export type ZodMediaType =
+type ZodMediaType =
   | "application/json"
   | "text/html"
   | "text/plain"
   | "application/xml"
   | (string & {});
-export type ZodContentObject = Partial<
-  Record<ZodMediaType, ZodMediaTypeObject>
->;
-export type ZodRequestBody = {
+type ZodContentObject = Partial<Record<ZodMediaType, ZodMediaTypeObject>>;
+type ZodRequestBody = {
   description?: string;
   content: ZodContentObject;
   required?: boolean;
 };
+
+export { ZodMediaTypeObject, ZodMediaType, ZodContentObject, ZodRequestBody };

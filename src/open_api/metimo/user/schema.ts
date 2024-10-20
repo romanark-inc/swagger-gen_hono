@@ -24,6 +24,10 @@ const userSchema = z
   })
   .describe("User");
 
+const userListResponse = z.object({
+  users: z.array(userSchema),
+});
+
 const userRequestBody = userSchema
   .omit({
     user_id: true,
@@ -50,4 +54,4 @@ const userParams = userSchema
   })
   .describe("UserParams");
 
-export { userSchema, userRequestBody, userParams };
+export { userSchema, userListResponse, userRequestBody, userParams };
