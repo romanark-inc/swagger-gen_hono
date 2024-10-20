@@ -11,6 +11,8 @@ const commentSchema = z
   })
   .describe("Comment");
 
+const CommentIDResponse = commentSchema.pick({ comment_id: true });
+
 const commentListResponse = z.object({
   comments: z.array(commentSchema),
 });
@@ -32,6 +34,7 @@ const commentRequestBody = commentSchema
   .describe("CommentRequestBody");
 
 export {
+  CommentIDResponse,
   commentSchema,
   commentListResponse,
   commentParams,

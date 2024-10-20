@@ -10,6 +10,10 @@ const paymentHistorySchema = z
   })
   .describe("PaymentHistory");
 
+const PaymentHistoryIDResponse = paymentHistorySchema.pick({
+  payment_id: true,
+});
+
 const paymentHistoryListResponse = z.object({
   payment_histories: z.array(paymentHistorySchema),
 });
@@ -33,6 +37,7 @@ const paymentHistoryRequestBody = paymentHistorySchema
   .describe("PaymentHistoryRequestBody");
 
 export {
+  PaymentHistoryIDResponse,
   paymentHistorySchema,
   paymentHistoryListResponse,
   paymentHistoryParams,

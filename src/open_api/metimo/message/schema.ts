@@ -11,6 +11,8 @@ const messageSchema = z
   })
   .describe("Message");
 
+const MessageIDResponse = messageSchema.pick({ message_id: true });
+
 const massageListResponse = z.object({
   messages: z.array(messageSchema),
 });
@@ -33,6 +35,7 @@ const messageRequestBody = messageSchema
   .describe("MessageRequestBody");
 
 export {
+  MessageIDResponse,
   messageSchema,
   massageListResponse,
   messageParams,

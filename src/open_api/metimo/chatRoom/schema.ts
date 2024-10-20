@@ -10,6 +10,8 @@ const chatRoomSchema = z
   })
   .describe("ChatRoom");
 
+const ChatRoomIDResponse = chatRoomSchema.pick({ chat_room_id: true });
+
 const chatRoomListResponse = z.object({
   chat_rooms: z.array(chatRoomSchema),
 });
@@ -37,6 +39,7 @@ const chatRoomRequestBody = chatRoomSchema
   .describe("ChatRoomRequestBody");
 
 export {
+  ChatRoomIDResponse,
   chatRoomSchema,
   chatRoomListResponse,
   chatRoomParams,
