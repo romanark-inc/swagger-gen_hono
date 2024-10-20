@@ -41,4 +41,4 @@ const postRequestBody = postSchema
   })
   .describe("PostRequestBody");
 
-export { postSchema, postParams, postRequestBody };
+export { postSchema, postListResponse, postParams, postRequestBody };
