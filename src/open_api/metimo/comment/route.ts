@@ -20,7 +20,7 @@ const CommentGetAllRoute = getRoute({
   path: "comments",
   responsesSchema: commentListResponse,
   tags: "Comment",
-  summary: "comment一��取得",
+  summary: "comment一覧取得",
   description: "comment一覧取得",
 });
 
