@@ -12,12 +12,14 @@ const CommentCreateRoute = postRoute({
   requestBodySchema: commentRequestBody,
   responsesSchema: commentIDResponse,
   tags: "Comment",
+  description: "comment作成",
 });
 
 const CommentGetAllRoute = getRoute({
   path: "comments",
   responsesSchema: commentListResponse,
   tags: "Comment",
+  description: "comment一覧取得",
 });
 
 const CommentGetByIDRoute = getRoute({
@@ -25,6 +27,7 @@ const CommentGetByIDRoute = getRoute({
   paramsSchema: commentParams,
   responsesSchema: commentSchema,
   tags: "Comment",
+  description: "comment取得",
 });
 
 const CommentUpdateRoute = putRoute({
@@ -33,6 +36,7 @@ const CommentUpdateRoute = putRoute({
   requestBodySchema: commentRequestBody,
   responsesSchema: commentIDResponse,
   tags: "Comment",
+  description: "comment更新",
 });
 
 const CommentDeleteRoute = deleteRoute({
@@ -40,6 +44,7 @@ const CommentDeleteRoute = deleteRoute({
   paramsSchema: commentParams,
   responsesSchema: commentIDResponse,
   tags: "Comment",
+  description: "comment削除",
 });
 
 export const CommentRoutes = [

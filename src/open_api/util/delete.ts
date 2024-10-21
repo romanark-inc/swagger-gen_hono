@@ -7,6 +7,8 @@ type deleteRouteProps = {
   paramsSchema?: ZodSchema<any>;
   responsesSchema: ZodSchema<any>;
   tags: string;
+  summary?: string;
+  description?: string;
 };
 
 export const deleteRoute = (
@@ -15,7 +17,9 @@ export const deleteRoute = (
   return {
     method: "delete",
     path: props.path,
+    summary: props.summary,
     tags: [props.tags],
+    description: props.description,
     request: {
       params: props.paramsSchema as AnyZodObject | ZodObjectWithEffect,
     },

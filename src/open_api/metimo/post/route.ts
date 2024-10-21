@@ -12,12 +12,14 @@ const PostCreateRoute = postRoute({
   requestBodySchema: postRequestBody,
   responsesSchema: postIDResponse,
   tags: "Posts",
+  description: "user作成",
 });
 
 const PostGetAllRoute = getRoute({
   path: "posts",
   responsesSchema: postListResponse,
   tags: "Posts",
+  description: "user一覧取得",
 });
 
 const PostGetByIDRoute = getRoute({
@@ -25,6 +27,7 @@ const PostGetByIDRoute = getRoute({
   paramsSchema: postParams,
   responsesSchema: postSchema,
   tags: "Posts",
+  description: "user取得",
 });
 
 const PostUpdateRoute = putRoute({
@@ -33,6 +36,7 @@ const PostUpdateRoute = putRoute({
   requestBodySchema: postRequestBody,
   responsesSchema: postIDResponse,
   tags: "Posts",
+  description: "user更新",
 });
 
 const PostDeleteRoute = deleteRoute({
@@ -40,6 +44,7 @@ const PostDeleteRoute = deleteRoute({
   paramsSchema: postParams,
   responsesSchema: postIDResponse,
   tags: "Posts",
+  description: "user削除",
 });
 
 export const PostRoutes = [

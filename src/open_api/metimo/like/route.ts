@@ -12,12 +12,14 @@ const LikeCreateRoute = postRoute({
   requestBodySchema: likeRequestBody,
   responsesSchema: likeIDResponse,
   tags: "Like",
+  description: "like作成",
 });
 
 const LikeGetAllRoute = getRoute({
   path: "likes",
   responsesSchema: likeListResponse,
   tags: "Like",
+  description: "like一覧取得",
 });
 
 const LikeGetByIDRoute = getRoute({
@@ -25,6 +27,7 @@ const LikeGetByIDRoute = getRoute({
   paramsSchema: likeParams,
   responsesSchema: likeSchema,
   tags: "Like",
+  description: "like取得",
 });
 
 const LikeUpdateRoute = putRoute({
@@ -33,6 +36,7 @@ const LikeUpdateRoute = putRoute({
   requestBodySchema: likeRequestBody,
   responsesSchema: likeIDResponse,
   tags: "Like",
+  description: "like更新",
 });
 
 const LikeDeleteRoute = deleteRoute({
@@ -40,6 +44,7 @@ const LikeDeleteRoute = deleteRoute({
   paramsSchema: likeParams,
   responsesSchema: likeIDResponse,
   tags: "Like",
+  description: "like削除",
 });
 
 export const LikeRoutes = [

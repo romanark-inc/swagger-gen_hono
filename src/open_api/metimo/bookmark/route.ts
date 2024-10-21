@@ -12,12 +12,14 @@ const BookmarkCreateRoute = postRoute({
   requestBodySchema: bookmarkRequestBody,
   responsesSchema: bookmarkIDResponse,
   tags: "Bookmarks",
+  description: "bookmark作成",
 });
 
 const BookmarkGetAllRoute = getRoute({
   path: "bookmarks",
   responsesSchema: bookmarkListResponse,
   tags: "Bookmarks",
+  description: "bookmark一覧取得",
 });
 
 const BookmarkGetByIDRoute = getRoute({
@@ -25,6 +27,7 @@ const BookmarkGetByIDRoute = getRoute({
   paramsSchema: bookmarkParams,
   responsesSchema: bookmarkSchema,
   tags: "Bookmarks",
+  description: "bookmark取得",
 });
 
 const BookmarkUpdateRoute = putRoute({
@@ -33,6 +36,7 @@ const BookmarkUpdateRoute = putRoute({
   requestBodySchema: bookmarkRequestBody,
   responsesSchema: bookmarkIDResponse,
   tags: "Bookmarks",
+  description: "bookmark更新",
 });
 
 const BookmarkDeleteRoute = deleteRoute({
@@ -40,6 +44,7 @@ const BookmarkDeleteRoute = deleteRoute({
   paramsSchema: bookmarkParams,
   responsesSchema: bookmarkIDResponse,
   tags: "Bookmarks",
+  description: "bookmark削除",
 });
 
 export const BookmarkRoutes = [

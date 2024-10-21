@@ -8,6 +8,8 @@ type getRouteProps = {
   responsesSchema: ZodSchema<any>;
   querySchema?: ZodSchema<any>;
   tags: string;
+  description?: string;
+  summary?: string;
 };
 
 export const getRoute = (
@@ -16,7 +18,9 @@ export const getRoute = (
   return {
     method: "get",
     path: props.path,
+    summary: props.summary,
     tags: [props.tags],
+    description: props.description,
     request: {
       params: props.paramsSchema as AnyZodObject | ZodObjectWithEffect,
     },

@@ -12,12 +12,14 @@ const UserCreateRoute = postRoute({
   requestBodySchema: userRequestBody,
   responsesSchema: userIDResponse,
   tags: "User",
+  description: "user作成",
 });
 
 const UserAllGetRoute = getRoute({
   path: "users",
   responsesSchema: userListResponse,
   tags: "User",
+  description: "user全取得",
 });
 
 const UserGetByIDRoute = getRoute({
@@ -25,6 +27,7 @@ const UserGetByIDRoute = getRoute({
   paramsSchema: userParams,
   responsesSchema: userSchema,
   tags: "User",
+  description: "user取得",
 });
 
 const UserUpdateRoute = putRoute({
@@ -33,6 +36,7 @@ const UserUpdateRoute = putRoute({
   requestBodySchema: userRequestBody,
   responsesSchema: userIDResponse,
   tags: "User",
+  description: "user更新",
 });
 
 const UserDeleteRoute = deleteRoute({
@@ -40,6 +44,7 @@ const UserDeleteRoute = deleteRoute({
   paramsSchema: userParams,
   responsesSchema: userIDResponse,
   tags: "User",
+  description: "user削除",
 });
 
 export const UserRoutes = [
