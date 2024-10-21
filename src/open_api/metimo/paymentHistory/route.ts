@@ -12,6 +12,7 @@ const PaymentHistoryCreateRoute = postRoute({
   requestBodySchema: paymentHistoryRequestBody,
   responsesSchema: paymentHistoryIDResponse,
   tags: "PaymentHistories",
+  summary: "payment history作成",
   description: "payment history作成",
 });
 
@@ -19,6 +20,7 @@ const PaymentHistoryAllGetRoute = getRoute({
   path: "payment_histories",
   responsesSchema: paymentHistoryListResponse,
   tags: "PaymentHistories",
+  summary: "payment history一覧取得",
   description: "payment history一覧取得",
 });
 
@@ -27,6 +29,7 @@ const PaymentHistoryGetByIDRoute = getRoute({
   paramsSchema: paymentHistoryParams,
   responsesSchema: paymentHistorySchema,
   tags: "PaymentHistories",
+  summary: "payment history取得",
   description: "payment history取得",
 });
 
@@ -36,6 +39,7 @@ const PaymentHistoryUpdateRoute = putRoute({
   requestBodySchema: paymentHistoryRequestBody,
   responsesSchema: paymentHistoryIDResponse,
   tags: "PaymentHistories",
+  summary: "payment history更新",
   description: "payment history更新",
 });
 
@@ -44,6 +48,7 @@ const PaymentHistoryDeleteRoute = deleteRoute({
   paramsSchema: paymentHistoryParams,
   responsesSchema: paymentHistoryIDResponse,
   tags: "PaymentHistories",
+  summary: "payment history削除",
   description: "payment history削除",
 });
 

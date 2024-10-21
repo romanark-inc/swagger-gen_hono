@@ -13,6 +13,7 @@ const ChatRoomCreateRoute = postRoute({
   responsesSchema: chatRoomIDResponse,
   tags: "ChatRooms",
   description: "chatRoom作成",
+  summary: "chatRoom作成",
 });
 
 const ChatRoomGetAllRoute = getRoute({
@@ -28,6 +29,7 @@ const ChatRoomGetByIDRoute = getRoute({
   responsesSchema: chatRoomSchema,
   tags: "ChatRooms",
   description: "chatRoom取得",
+  summary: "chatRoom取得",
 });
 
 const ChatRoomUpdateRoute = putRoute({
@@ -37,6 +39,7 @@ const ChatRoomUpdateRoute = putRoute({
   responsesSchema: chatRoomIDResponse,
   tags: "ChatRooms",
   description: "chatRoom更新",
+  summary: "chatRoom更新",
 });
 
 const ChatRoomDeleteRoute = deleteRoute({
@@ -45,6 +48,7 @@ const ChatRoomDeleteRoute = deleteRoute({
   responsesSchema: chatRoomIDResponse,
   tags: "ChatRooms",
   description: "chatRoom削除",
+  summary: "chatRoom削除",
 });
 
 export const ChatRoomRoutes = [

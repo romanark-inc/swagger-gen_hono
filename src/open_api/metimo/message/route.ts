@@ -12,6 +12,7 @@ const MessageCreateRoute = postRoute({
   requestBodySchema: messageRequestBody,
   responsesSchema: messageIDResponse,
   tags: "Messages",
+  summary: "message作成",
   description: "message作成",
 });
 
@@ -19,6 +20,7 @@ const MessageGetAllRoute = getRoute({
   path: "messages",
   responsesSchema: massageListResponse,
   tags: "Messages",
+  summary: "message一覧取得",
   description: "message一覧取得",
 });
 
@@ -27,6 +29,7 @@ const MessageGetByIDRoute = getRoute({
   paramsSchema: messageParams,
   responsesSchema: messageSchema,
   tags: "Messages",
+  summary: "message取得",
   description: "message取得",
 });
 
@@ -36,6 +39,7 @@ const MessageUpdateRoute = putRoute({
   requestBodySchema: messageRequestBody,
   responsesSchema: messageIDResponse,
   tags: "Messages",
+  summary: "message更新",
   description: "message更新",
 });
 
@@ -44,6 +48,7 @@ const MessageDeleteRoute = deleteRoute({
   paramsSchema: messageParams,
   responsesSchema: messageIDResponse,
   tags: "Messages",
+  summary: "message削除",
   description: "message削除",
 });
 

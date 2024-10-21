@@ -13,6 +13,7 @@ const AttachmentCreateRoute = postRoute({
   responsesSchema: attachmentIDResponse,
   tags: "Attachments",
   description: "attachment作成",
+  summary: "attachment作成",
 });
 
 const AttachmentGetAllRoute = getRoute({
@@ -20,6 +21,7 @@ const AttachmentGetAllRoute = getRoute({
   responsesSchema: attachmentListResponse,
   tags: "Attachments",
   description: "attachment一覧取得",
+  summary: "attachment一��取得",
 });
 
 const AttachmentGetByIDRoute = getRoute({
@@ -28,6 +30,7 @@ const AttachmentGetByIDRoute = getRoute({
   responsesSchema: attachmentSchema,
   tags: "Attachments",
   description: "attachment取得",
+  summary: "attachment取得",
 });
 
 const AttachmentUpdateRoute = putRoute({
@@ -37,6 +40,7 @@ const AttachmentUpdateRoute = putRoute({
   responsesSchema: attachmentIDResponse,
   tags: "Attachments",
   description: "attachment更新",
+  summary: "attachment更新",
 });
 
 const AttachmentDeleteRoute = deleteRoute({
@@ -45,6 +49,7 @@ const AttachmentDeleteRoute = deleteRoute({
   responsesSchema: attachmentIDResponse,
   tags: "Attachments",
   description: "attachment削除",
+  summary: "attachment��除",
 });
 
 export const AttachmentRoutes = [

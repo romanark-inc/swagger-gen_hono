@@ -12,6 +12,7 @@ const PostCreateRoute = postRoute({
   requestBodySchema: postRequestBody,
   responsesSchema: postIDResponse,
   tags: "Posts",
+  summary: "Post作成",
   description: "user作成",
 });
 
