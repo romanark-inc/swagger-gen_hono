@@ -11,17 +11,20 @@ const MessageCreateRoute = postRoute({
   path: "messages",
   requestBodySchema: messageRequestBody,
   responsesSchema: messageIDResponse,
+  tags: "Messages",
 });
 
 const MessageGetAllRoute = getRoute({
   path: "messages",
   responsesSchema: massageListResponse,
+  tags: "Messages",
 });
 
 const MessageGetByIDRoute = getRoute({
   path: "messages/{message_id}",
   paramsSchema: messageParams,
   responsesSchema: messageSchema,
+  tags: "Messages",
 });
 
 const MessageUpdateRoute = putRoute({
@@ -29,12 +32,14 @@ const MessageUpdateRoute = putRoute({
   paramsSchema: messageParams,
   requestBodySchema: messageRequestBody,
   responsesSchema: messageIDResponse,
+  tags: "Messages",
 });
 
 const MessageDeleteRoute = deleteRoute({
   path: "messages/{message_id}",
   paramsSchema: messageParams,
   responsesSchema: messageIDResponse,
+  tags: "Messages",
 });
 
 export const MessageRoutes = [

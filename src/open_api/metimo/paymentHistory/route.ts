@@ -11,17 +11,20 @@ const PaymentHistoryCreateRoute = postRoute({
   path: "payment_histories",
   requestBodySchema: paymentHistoryRequestBody,
   responsesSchema: paymentHistoryIDResponse,
+  tags: "PaymentHistories",
 });
 
 const PaymentHistoryAllGetRoute = getRoute({
   path: "payment_histories",
   responsesSchema: paymentHistoryListResponse,
+  tags: "PaymentHistories",
 });
 
 const PaymentHistoryGetByIDRoute = getRoute({
   path: "payment_histories/{payment_history_id}",
   paramsSchema: paymentHistoryParams,
   responsesSchema: paymentHistorySchema,
+  tags: "PaymentHistories",
 });
 
 const PaymentHistoryUpdateRoute = putRoute({
@@ -29,12 +32,14 @@ const PaymentHistoryUpdateRoute = putRoute({
   paramsSchema: paymentHistoryParams,
   requestBodySchema: paymentHistoryRequestBody,
   responsesSchema: paymentHistoryIDResponse,
+  tags: "PaymentHistories",
 });
 
 const PaymentHistoryDeleteRoute = deleteRoute({
   path: "payment_histories/{payment_history_id}",
   paramsSchema: paymentHistoryParams,
   responsesSchema: paymentHistoryIDResponse,
+  tags: "PaymentHistories",
 });
 
 export const PaymentHistoryRoutes = [

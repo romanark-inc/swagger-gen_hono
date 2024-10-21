@@ -8,6 +8,7 @@ type putRouteProps = {
   paramsSchema?: ZodSchema<any>;
   requestBodySchema: ZodSchema<any>;
   responsesSchema: ZodSchema<any>;
+  tags: string;
 };
 
 export const putRoute = (
@@ -16,6 +17,7 @@ export const putRoute = (
   return {
     method: "put",
     path: props.path,
+    tags: [props.tags],
     request: {
       params: props.paramsSchema as AnyZodObject | ZodObjectWithEffect,
       body: {

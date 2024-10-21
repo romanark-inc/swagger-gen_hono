@@ -11,17 +11,20 @@ const PostCreateRoute = postRoute({
   path: "posts",
   requestBodySchema: postRequestBody,
   responsesSchema: postIDResponse,
+  tags: "Posts",
 });
 
 const PostGetAllRoute = getRoute({
   path: "posts",
   responsesSchema: postListResponse,
+  tags: "Posts",
 });
 
 const PostGetByIDRoute = getRoute({
   path: "posts/{post_id}",
   paramsSchema: postParams,
   responsesSchema: postSchema,
+  tags: "Posts",
 });
 
 const PostUpdateRoute = putRoute({
@@ -29,12 +32,14 @@ const PostUpdateRoute = putRoute({
   paramsSchema: postParams,
   requestBodySchema: postRequestBody,
   responsesSchema: postIDResponse,
+  tags: "Posts",
 });
 
 const PostDeleteRoute = deleteRoute({
   path: "posts/{post_id}",
   paramsSchema: postParams,
   responsesSchema: postIDResponse,
+  tags: "Posts",
 });
 
 export const PostRoutes = [

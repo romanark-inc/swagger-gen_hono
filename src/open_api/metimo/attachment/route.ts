@@ -11,17 +11,20 @@ const AttachmentCreateRoute = postRoute({
   path: "attachments",
   requestBodySchema: attachmentRequestBody,
   responsesSchema: attachmentIDResponse,
+  tags: "Attachments",
 });
 
 const AttachmentGetAllRoute = getRoute({
   path: "attachments",
   responsesSchema: attachmentListResponse,
+  tags: "Attachments",
 });
 
 const AttachmentGetByIDRoute = getRoute({
   path: "attachments/{attachment_id}",
   paramsSchema: attachmentParams,
   responsesSchema: attachmentSchema,
+  tags: "Attachments",
 });
 
 const AttachmentUpdateRoute = putRoute({
@@ -29,12 +32,14 @@ const AttachmentUpdateRoute = putRoute({
   paramsSchema: attachmentParams,
   requestBodySchema: attachmentRequestBody,
   responsesSchema: attachmentIDResponse,
+  tags: "Attachments",
 });
 
 const AttachmentDeleteRoute = deleteRoute({
   path: "attachments/{attachment_id}",
   paramsSchema: attachmentParams,
   responsesSchema: attachmentIDResponse,
+  tags: "Attachments",
 });
 
 export const AttachmentRoutes = [

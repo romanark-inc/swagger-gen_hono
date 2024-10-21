@@ -11,17 +11,20 @@ const CommentCreateRoute = postRoute({
   path: "comments",
   requestBodySchema: commentRequestBody,
   responsesSchema: commentIDResponse,
+  tags: "Comment",
 });
 
 const CommentGetAllRoute = getRoute({
   path: "comments",
   responsesSchema: commentListResponse,
+  tags: "Comment",
 });
 
 const CommentGetByIDRoute = getRoute({
   path: "comments/{comment_id}",
   paramsSchema: commentParams,
   responsesSchema: commentSchema,
+  tags: "Comment",
 });
 
 const CommentUpdateRoute = putRoute({
@@ -29,12 +32,14 @@ const CommentUpdateRoute = putRoute({
   paramsSchema: commentParams,
   requestBodySchema: commentRequestBody,
   responsesSchema: commentIDResponse,
+  tags: "Comment",
 });
 
 const CommentDeleteRoute = deleteRoute({
   path: "comments/{comment_id}",
   paramsSchema: commentParams,
   responsesSchema: commentIDResponse,
+  tags: "Comment",
 });
 
 export const CommentRoutes = [
