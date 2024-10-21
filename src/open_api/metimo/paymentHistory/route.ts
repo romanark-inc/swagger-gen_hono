@@ -6,6 +6,7 @@ import {
   paymentHistoryRequestBody,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const PaymentHistoryCreateRoute = postRoute({
   path: "payment_histories",
@@ -18,6 +19,7 @@ const PaymentHistoryCreateRoute = postRoute({
 
 const PaymentHistoryAllGetRoute = getRoute({
   path: "payment_histories",
+  querySchema: getListQuery,
   responsesSchema: paymentHistoryListResponse,
   tags: "PaymentHistories",
   summary: "payment history一覧取得",

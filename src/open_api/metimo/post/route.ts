@@ -6,6 +6,7 @@ import {
   postListResponse,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const PostCreateRoute = postRoute({
   path: "posts",
@@ -18,6 +19,7 @@ const PostCreateRoute = postRoute({
 
 const PostGetAllRoute = getRoute({
   path: "posts",
+  querySchema: getListQuery,
   responsesSchema: postListResponse,
   tags: "Posts",
   summary: "Post一覧取得",

@@ -6,6 +6,7 @@ import {
   likeListResponse,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const LikeCreateRoute = postRoute({
   path: "likes",
@@ -18,6 +19,7 @@ const LikeCreateRoute = postRoute({
 
 const LikeGetAllRoute = getRoute({
   path: "likes",
+  querySchema: getListQuery,
   responsesSchema: likeListResponse,
   tags: "Like",
   summary: "like一覧取得",

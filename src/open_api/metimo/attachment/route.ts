@@ -6,6 +6,7 @@ import {
   attachmentRequestBody,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const AttachmentCreateRoute = postRoute({
   path: "attachments",
@@ -18,6 +19,7 @@ const AttachmentCreateRoute = postRoute({
 
 const AttachmentGetAllRoute = getRoute({
   path: "attachments",
+  querySchema: getListQuery,
   responsesSchema: attachmentListResponse,
   tags: "Attachments",
   description: "attachment一覧取得",

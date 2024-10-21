@@ -23,6 +23,7 @@ export const getRoute = (
     description: props.description,
     request: {
       params: props.paramsSchema as AnyZodObject | ZodObjectWithEffect,
+      query: props.querySchema as AnyZodObject | ZodObjectWithEffect,
     },
     responses: {
       200: {

@@ -6,6 +6,7 @@ import {
   chatRoomRequestBody,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const ChatRoomCreateRoute = postRoute({
   path: "chatRooms",
@@ -18,6 +19,7 @@ const ChatRoomCreateRoute = postRoute({
 
 const ChatRoomGetAllRoute = getRoute({
   path: "chatRooms",
+  querySchema: getListQuery,
   responsesSchema: chatRoomListResponse,
   tags: "ChatRooms",
   description: "chatRoom一覧取得",

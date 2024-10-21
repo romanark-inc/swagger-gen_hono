@@ -6,6 +6,7 @@ import {
   bookmarkRequestBody,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const BookmarkCreateRoute = postRoute({
   path: "bookmarks",
@@ -18,6 +19,7 @@ const BookmarkCreateRoute = postRoute({
 
 const BookmarkGetAllRoute = getRoute({
   path: "bookmarks",
+  querySchema: getListQuery,
   responsesSchema: bookmarkListResponse,
   tags: "Bookmarks",
   description: "bookmark一覧取得",

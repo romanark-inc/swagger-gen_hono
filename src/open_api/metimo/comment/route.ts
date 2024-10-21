@@ -6,6 +6,7 @@ import {
   commentListResponse,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const CommentCreateRoute = postRoute({
   path: "comments",
@@ -18,6 +19,7 @@ const CommentCreateRoute = postRoute({
 
 const CommentGetAllRoute = getRoute({
   path: "comments",
+  querySchema: getListQuery,
   responsesSchema: commentListResponse,
   tags: "Comment",
   summary: "comment一覧取得",

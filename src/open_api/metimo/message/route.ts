@@ -6,6 +6,7 @@ import {
   massageListResponse,
 } from "./schema";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../../util";
+import { getListQuery } from "../../schema/query";
 
 const MessageCreateRoute = postRoute({
   path: "messages",
@@ -18,6 +19,7 @@ const MessageCreateRoute = postRoute({
 
 const MessageGetAllRoute = getRoute({
   path: "messages",
+  querySchema: getListQuery,
   responsesSchema: massageListResponse,
   tags: "Messages",
   summary: "message一覧取得",
