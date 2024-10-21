@@ -48,7 +48,7 @@ const PostDeleteRoute = deleteRoute({
   paramsSchema: postParams,
   responsesSchema: postIDResponse,
   tags: "Posts",
-  summary: "Post��除",
+  summary: "Post削除",
   description: "user削除",
 });
 
