@@ -9,8 +9,13 @@ const paymentHistorySchema = z
     created_at: z.string(),
   })
   .describe("PaymentHistory");
+
+const paymentHistoryIDResponse = paymentHistorySchema.pick({
+  payment_id: true,
+});
+
 const paymentHistoryListResponse = z.object({
-  posts: z.array(paymentHistorySchema),
+  payment_histories: z.array(paymentHistorySchema),
 });
 
 const paymentHistoryParams = paymentHistorySchema
@@ -32,6 +37,7 @@ const paymentHistoryRequestBody = paymentHistorySchema
   .describe("PaymentHistoryRequestBody");
 
 export {
+  paymentHistoryIDResponse,
   paymentHistorySchema,
   paymentHistoryListResponse,
   paymentHistoryParams,

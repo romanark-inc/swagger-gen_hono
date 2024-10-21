@@ -1,7 +1,7 @@
 import { Hono } from "hono";
-import api from "./controllers";
-import openapi from "./open_api/route";
+
 import { prettyJSON } from "hono/pretty-json";
+import openapi from "./open_api/route";
 
 const app = new Hono();
 app.use(prettyJSON());
@@ -11,7 +11,6 @@ app.get("/", (c) => {
   return c.json({ message: "Hello, World!" });
 });
 
-app.route("/api/v1", api);
 app.route("/api", openapi);
 
 export default app;

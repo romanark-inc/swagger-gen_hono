@@ -11,6 +11,11 @@ const commentSchema = z
   })
   .describe("Comment");
 
+const commentIDResponse = commentSchema.pick({ comment_id: true });
+
+const commentListResponse = z.object({
+  comments: z.array(commentSchema),
+});
 const commentParams = commentSchema
   .pick({ comment_id: true })
   .openapi({
@@ -28,4 +33,10 @@ const commentRequestBody = commentSchema
   })
   .describe("CommentRequestBody");
 
-export { commentSchema, commentParams, commentRequestBody };
+export {
+  commentIDResponse,
+  commentSchema,
+  commentListResponse,
+  commentParams,
+  commentRequestBody,
+};

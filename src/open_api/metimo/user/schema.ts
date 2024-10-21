@@ -24,6 +24,8 @@ const userSchema = z
   })
   .describe("User");
 
+const userIDResponse = userSchema.pick({ user_id: true });
+
 const userListResponse = z.object({
   users: z.array(userSchema),
 });
@@ -54,4 +56,10 @@ const userParams = userSchema
   })
   .describe("UserParams");
 
-export { userSchema, userListResponse, userRequestBody, userParams };
+export {
+  userIDResponse,
+  userSchema,
+  userListResponse,
+  userRequestBody,
+  userParams,
+};

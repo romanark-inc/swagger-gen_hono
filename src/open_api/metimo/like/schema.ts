@@ -9,6 +9,12 @@ const likeSchema = z
   })
   .describe("Like");
 
+const likeIDResponse = likeSchema.pick({ like_id: true });
+
+const likeListResponse = z.object({
+  likes: z.array(likeSchema),
+});
+
 const likeParams = likeSchema
   .pick({ like_id: true })
   .openapi({
@@ -26,4 +32,10 @@ const likeRequestBody = likeSchema
   })
   .describe("LikeRequestBody");
 
-export { likeSchema, likeParams, likeRequestBody };
+export {
+  likeIDResponse,
+  likeSchema,
+  likeListResponse,
+  likeParams,
+  likeRequestBody,
+};

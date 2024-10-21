@@ -11,6 +11,12 @@ const messageSchema = z
   })
   .describe("Message");
 
+const messageIDResponse = messageSchema.pick({ message_id: true });
+
+const massageListResponse = z.object({
+  messages: z.array(messageSchema),
+});
+
 const messageParams = messageSchema
   .pick({ message_id: true })
   .openapi({
@@ -28,4 +34,10 @@ const messageRequestBody = messageSchema
   })
   .describe("MessageRequestBody");
 
-export { messageSchema, messageParams, messageRequestBody };
+export {
+  messageIDResponse,
+  messageSchema,
+  massageListResponse,
+  messageParams,
+  messageRequestBody,
+};

@@ -10,6 +10,12 @@ const bookmarkSchema = z
   })
   .describe("Bookmark");
 
+const bookmarkListResponse = z.object({
+  bookmarks: z.array(bookmarkSchema),
+});
+
+const bookmarkIDResponse = bookmarkSchema.pick({ bookmark_id: true });
+
 const bookmarkParams = bookmarkSchema
   .pick({ bookmark_id: true })
   .openapi({
@@ -31,4 +37,10 @@ const bookmarkRequestBody = bookmarkSchema
   })
   .describe("BookmarkRequestBody");
 
-export { bookmarkSchema, bookmarkParams, bookmarkRequestBody };
+export {
+  bookmarkIDResponse,
+  bookmarkSchema,
+  bookmarkListResponse,
+  bookmarkParams,
+  bookmarkRequestBody,
+};

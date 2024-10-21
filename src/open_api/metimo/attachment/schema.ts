@@ -14,6 +14,8 @@ const attachmentListResponse = z.object({
   attachments: z.array(attachmentSchema),
 });
 
+const attachmentIDResponse = attachmentSchema.pick({ attachment_id: true });
+
 const attachmentParams = attachmentSchema
   .pick({ attachment_id: true, message_id: true })
   .openapi({
@@ -30,6 +32,7 @@ const attachmentRequestBody = attachmentSchema
   .describe("AttachmentRequestBody");
 
 export {
+  attachmentIDResponse,
   attachmentSchema,
   attachmentListResponse,
   attachmentParams,
