@@ -48,7 +48,7 @@ const UserDeleteRoute = deleteRoute({
   paramsSchema: userParams,
   responsesSchema: userIDResponse,
   tags: "User",
-  summary: "user��除",
+  summary: "user削除",
   description: "user削除",
 });
 

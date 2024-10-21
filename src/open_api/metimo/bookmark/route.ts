@@ -21,7 +21,7 @@ const BookmarkGetAllRoute = getRoute({
   responsesSchema: bookmarkListResponse,
   tags: "Bookmarks",
   description: "bookmark一覧取得",
-  summary: "bookmark一��取得",
+  summary: "bookmark一覧取得",
 });
 
 const BookmarkGetByIDRoute = getRoute({
@@ -49,7 +49,7 @@ const BookmarkDeleteRoute = deleteRoute({
   responsesSchema: bookmarkIDResponse,
   tags: "Bookmarks",
   description: "bookmark削除",
-  summary: "bookmark��除",
+  summary: "bookmark削除",
 });
 
 export const BookmarkRoutes = [

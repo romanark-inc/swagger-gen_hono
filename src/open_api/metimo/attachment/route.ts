@@ -21,7 +21,7 @@ const AttachmentGetAllRoute = getRoute({
   responsesSchema: attachmentListResponse,
   tags: "Attachments",
   description: "attachment一覧取得",
-  summary: "attachment一��取得",
+  summary: "attachment一覧取得",
 });
 
 const AttachmentGetByIDRoute = getRoute({
@@ -49,7 +49,7 @@ const AttachmentDeleteRoute = deleteRoute({
   responsesSchema: attachmentIDResponse,
   tags: "Attachments",
   description: "attachment削除",
-  summary: "attachment��除",
+  summary: "attachment削除",
 });
 
 export const AttachmentRoutes = [

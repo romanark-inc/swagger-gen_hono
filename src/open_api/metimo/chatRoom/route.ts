@@ -21,6 +21,7 @@ const ChatRoomGetAllRoute = getRoute({
   responsesSchema: chatRoomListResponse,
   tags: "ChatRooms",
   description: "chatRoom一覧取得",
+  summary: "chatRoom一覧取得",
 });
 
 const ChatRoomGetByIDRoute = getRoute({
