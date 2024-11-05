@@ -7,3 +7,6 @@ export { MessageRoutes } from "./message/route";
 export { CommentRoutes } from "./comment/route";
 export { PaymentHistoryRoutes } from "./paymentHistory/route";
 export { AttachmentRoutes } from "./attachment/route";
+export { ProfileRoutes } from "./profile/route";
+export { RoleRoutes } from "./role/route";
+export { AdvisorRoleRoutes } from "./advisor_role/route";

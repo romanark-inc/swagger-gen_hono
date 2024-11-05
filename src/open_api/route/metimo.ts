@@ -9,6 +9,9 @@ import {
   CommentRoutes,
   PaymentHistoryRoutes,
   AttachmentRoutes,
+  ProfileRoutes,
+  RoleRoutes,
+  AdvisorRoleRoutes,
 } from "../metimo";
 import { getRoute, postRoute, putRoute, deleteRoute } from "../util";
 export const metimoApi = new OpenAPIHono();
@@ -23,6 +26,9 @@ const routes = [
   ...CommentRoutes,
   ...PaymentHistoryRoutes,
   ...AttachmentRoutes,
+  ...ProfileRoutes,
+  ...RoleRoutes,
+  ...AdvisorRoleRoutes,
 ];
 
 routes.forEach((route) => {
