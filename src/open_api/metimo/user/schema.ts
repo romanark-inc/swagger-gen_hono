@@ -27,11 +27,11 @@ const userListResponse = z.object({
 const userRequestBody = userSchema
   .omit({
     user_id: true,
-    created_at: true,
-    updated_at: true,
     last_login: true,
     credit_balance: true,
     is_subscriber: true,
+    created_at: true,
+    updated_at: true,
   })
   .openapi({
     required: ["name", "email", "password_hash"],
