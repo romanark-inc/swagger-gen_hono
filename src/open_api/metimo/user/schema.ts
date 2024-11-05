@@ -1,17 +1,11 @@
 import { z } from "@hono/zod-openapi";
 
-const genderEnum = z.enum(["male", "female", "other"]);
-
 // User schema
 const userSchema = z
   .object({
     user_id: z.string(),
-    name: z.string(),
     email: z.string().email(),
     password_hash: z.string(),
-    profile_picture: z.string().optional(),
-    bio: z.string().optional(),
-    gender: genderEnum.optional(),
     last_login: z.string().optional(),
     is_advisor: z.boolean().default(false),
     credit_balance: z.number().default(0),
